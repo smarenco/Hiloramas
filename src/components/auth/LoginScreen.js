@@ -56,6 +56,7 @@ export const LoginScreen = () => {
 
           return true;
     }
+    
     return (
         <>
             <h3 className='auth__title'>Login</h3>

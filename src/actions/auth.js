@@ -1,7 +1,7 @@
-import { useDispatch } from 'react-redux';
 import { firebase, googleAuthProvider } from '../firebase/firebase-config';
 import { types } from "../types/types"
 import { finishLoading, setError, startLoading } from './ui';
+import Swal from 'sweetalert2'
 
 export const startLoginEmailPassword = (email, password) => {
     return (dispatch) => {
@@ -12,8 +12,8 @@ export const startLoginEmailPassword = (email, password) => {
             dispatch(login(user.uid, user.displayName));
             dispatch(finishLoading());
         }).catch(error => {
-            dispatch(setError(error.message));
             dispatch(finishLoading());
+            Swal.fire('Error', error.message, 'error');
         })
             
     }
@@ -26,7 +26,7 @@ export const startRegistrerWithEmailPasswordName = (email, password, name) => {
             await user.updateProfile({displayName: name});
             dispatch( login(user.uid, user.displayName))
         }).catch(error => {
-            dispatch(setError(error.message));
+            Swal.fire('Error', error.message, 'error');
         })
     }
 }
@@ -40,11 +40,24 @@ export const starGoogleLogin = () => {
     }
 }
 
+export const startLogout = () => {
+    return async (dispatch) => {        
+        await firebase.auth().signOut();
+
+        dispatch(logout());
+
+    }
+}
+
 export const login = (uid, displayName) => ({
     type: types.login,
     payload: {
         uid,
         displayName
     }
+})
+
+export const logout = () => ({
+    type: types.logout
 })
 
