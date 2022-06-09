@@ -54,7 +54,7 @@ export const RegistrerScreen = () => {
         <h3 className='auth__title'>Registrer</h3>
         {msgError && <div className='auth__alert-error'>{msgError}</div>}
 
-        <form onSubmit={handleRegistrer}>
+        <form onSubmit={handleRegistrer} className='animate__animated animate__fadeIn animate__faster'>
             <input onChange={handleInputChange} value={name} type='text' autoComplete='off' placeholder='Name' className='auth__input' name='name' />
             <input onChange={handleInputChange} value={email} type='text' autoComplete='off' placeholder='Email' className='auth__input' name='email' />
             <input onChange={handleInputChange} value={password} type='password' placeholder='Password' className='auth__input' name='password' />
