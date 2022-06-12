@@ -54,9 +54,6 @@ export const HiloramaScreen = () => {
               }
             </div>
           </div>
-          <div className='item__content'>
-              
-          </div>
         </div>
 
         <button onClick={handeDelete} className='btn btn-danger'>Delete</button>

@@ -13,9 +13,9 @@ export const RegistrerScreen = () => {
 
   const [ formValues, handleInputChange ] = useForm({
     name: 'Santii',
-    email: 'smarenco@fusionar.com.uy',
-    password: '123456',
-    password2: '123456',
+    email: 'santimarenco@gmail.com',
+    password: 'Fusionar1',
+    password2: 'Fusionar1',
   });
 
   const { name, email, password, password2 } = formValues;

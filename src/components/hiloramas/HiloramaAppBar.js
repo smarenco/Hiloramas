@@ -28,8 +28,8 @@ export const HiloramaAppBar = () => {
 
         <input type="file" id='fileSelector' style={{display: 'none'}} onChange={handleFileChange}/>
         <div>
-            <button className='btn' onClick={handlePictureClick}>Picture</button>
-            <button className='btn' onClick={handleSave}>Save</button>
+            <button className='btn' onClick={handlePictureClick}>Foto</button>
+            <button className='btn' onClick={handleSave}>Guardar</button>
 
         </div>
     </div>

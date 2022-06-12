@@ -23,7 +23,6 @@ export const Sidebar = () => {
         
         <div className='hilorama_sidebar-navbar'>
             <h3 className='mt-5'>
-                <i className='far fa-moon'></i>
                 <span>{ name }</span>
             </h3>
 
@@ -32,8 +31,8 @@ export const Sidebar = () => {
         
 
         <div className='hilorama__new-entry' onClick={handleAddNew}>
-            <i className='far fa-calendar-plus fa-5x'></i>
-            <p className='mt-5'> New entry</p>
+            <i className='fa fa-camera-retro fa-5x'></i>
+            <p className='mt-5'> Nuevo Hilorama</p>
         </div> 
 
         <HiloramaEntries />
