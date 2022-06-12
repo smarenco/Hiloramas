@@ -1,11 +1,11 @@
 
-.notes__main-content {
+.item__main-content {
     display: flex;
     flex-direction: column;
     height: 100%;
 }
 
-.notes__appbar {
+.item__appbar {
     align-items: center;
     background-color: $primary;
     color: white;
@@ -14,14 +14,31 @@
     padding: 10px 20px 10px 20px;
 }
 
-.notes__content {
+.item__contents {
     display: flex;
     flex-direction: column;
     height: 100%;
     padding: 20px;
 }
 
-.notes__title-input, .notes__textarea {
+.item__content {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    padding: 20px;
+}
+
+.item__item {
+    flex-direction: column;
+    flex-basis: 60%;
+    flex-shrink: 1;
+  }
+  
+.item__item:nth-child(2) {
+flex-shrink: 2;
+}
+
+.item__title-input, .item__textarea {
     border: none;
 
     &:focus {
@@ -30,21 +47,21 @@
     }
 }
 
-.notes__title-input {
+.item__title-input {
     color: $dark-grey;
     font-size: 25px;
     font-weight: 700;
     margin-bottom: 10px;
 } 
 
-.notes__textarea {
+.item__textarea {
     color: $dark-grey;
     font-size: 20px;
     flex: 1 1 auto;
     resize: none;
 }
 
-.notes__image img{
-    box-shadow: 5px 5px$dark-grey;
-    height: 150px;
+.item__image img{
+    box-shadow: 3px 3px $dark-grey;
+    height: 400px;
 }

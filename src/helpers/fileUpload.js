@@ -5,7 +5,7 @@ export const fileUpload = async ( file ) => {
 
     const formData = new FormData();
 
-    formData.append('upload_preset', 'react-journal')
+    formData.append('upload_preset', 'react-hiloramas')
     formData.append('file', file);
 
     try {

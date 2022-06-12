@@ -1,52 +1,52 @@
 import { types } from "../types/types";
 
 const initialState = {
-    notes: [],
+    items: [],
     active: null
 }
-export const noteReducer = (state = initialState, action) => {
+export const hiloramaReducer = (state = initialState, action) => {
 
     switch ( action.type ) {
-        case types.notesAddNew:
+        case types.hiloramaAddNew:
             return {
                 ...state,
-                notes: [
+                items: [
                     action.payload,
-                    ...state.notes
+                    ...state.items
                 ]
             }
-        case types.notesActive:
+        case types.hiloramaActive:
             return {
                 ...state,
                 active: {
                     ...action.payload
                 }
             }
-        case types.notesLoad:
+        case types.hiloramaLoad:
             return {
                 ...state,
-                notes: [ ...action.payload ]
+                items: [ ...action.payload ]
             }
-        case types.notesUpdated:
+        case types.hiloramaUpdated:
             return {
                 ...state,
-                notes: state.notes.map(
-                    note => note.id === action.payload.id ?
-                        action.payload.note :
-                        note
+                items: state.items.map(
+                    hilorama => hilorama.id === action.payload.id ?
+                        action.payload.hilorama :
+                        hilorama
                 )
             }
-        case types.notesDelete:
+        case types.hiloramaDelete:
             return {
                 ...state,
                 active: null,
-                notes: state.notes.filter( note => note.id !== action.payload )
+                items: state.items.filter( hilorama => hilorama.id !== action.payload )
             }
-        case types.notesLogoutCleaning:
+        case types.hiloramaLogoutCleaning:
             return { 
                 ...state,
                 active: null,
-                notes: []
+                items: []
             }
         default:
            return state; 

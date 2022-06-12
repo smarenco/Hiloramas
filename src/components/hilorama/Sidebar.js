@@ -1,8 +1,8 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { startLogout } from '../../actions/auth';
-import { startNewNote } from '../../actions/notes';
-import { JournalEntries } from './JournalEntries'
+import { startNewHilorama } from '../../actions/hilorama';
+import { HiloramaEntries } from './HiloramaEntries'
 
 export const Sidebar = () => {
 
@@ -15,13 +15,13 @@ export const Sidebar = () => {
   }
 
   const handleAddNew = () => {
-    dispatch( startNewNote() );
+    dispatch( startNewHilorama() );
   }
 
   return (
-    <aside className='journal__sidebar'>
+    <aside className='hilorama__sidebar'>
         
-        <div className='journal_sidebar-navbar'>
+        <div className='hilorama_sidebar-navbar'>
             <h3 className='mt-5'>
                 <i className='far fa-moon'></i>
                 <span>{ name }</span>
@@ -31,12 +31,12 @@ export const Sidebar = () => {
         </div>
         
 
-        <div className='journal__new-entry' onClick={handleAddNew}>
+        <div className='hilorama__new-entry' onClick={handleAddNew}>
             <i className='far fa-calendar-plus fa-5x'></i>
             <p className='mt-5'> New entry</p>
         </div> 
 
-        <JournalEntries />
+        <HiloramaEntries />
     </aside>
   )
 }

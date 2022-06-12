@@ -1,14 +1,14 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { startSaveNote, startUploading } from '../../actions/notes';
+import { startSaveHilorama, startUploading } from '../../actions/hilorama';
 
-export const NotesAppBar = () => {
+export const HiloramaAppBar = () => {
 
   const dispatch = useDispatch();
-  const { active: note } = useSelector( state => state.notes)
+  const { active: hilorama } = useSelector( state => state.hiloramas)
   
   const handleSave = () => {
-    dispatch( startSaveNote(note) );
+    dispatch( startSaveHilorama(hilorama) );
   }
 
   const handlePictureClick = () => {
@@ -23,8 +23,8 @@ export const NotesAppBar = () => {
   }
 
   return (
-    <div className='notes__appbar'>
-        <span>28 de agosto 2020</span>
+    <div className='item__appbar'>
+        <span></span>
 
         <input type="file" id='fileSelector' style={{display: 'none'}} onChange={handleFileChange}/>
         <div>
